@@ -11,7 +11,7 @@ describe("Client testing", () => {
 
     type PromiseType<T> = T extends PromiseLike<infer U> ? PromiseType<U> : T
 
-    let privateClient : PromiseType<typeof privateClientPromise>
+    let privateClient: PromiseType<typeof privateClientPromise>
     let publicClient: PromiseType<typeof publicClientPromise>
 
     beforeAll(async () => {
@@ -21,8 +21,9 @@ describe("Client testing", () => {
 
     it("get order", async () => {
         const orderList = await privateClient.order.list()
-        const fetched = !gracely.Error.is(orderList) && Array.isArray(orderList) ? await privateClient.order.get(orderList[0].id) : false
-        expect(!gracely.Error.is(fetched) ? fetched : false).toEqual(orderList[0])
+        const order = !gracely.Error.is(orderList) && Array.isArray(orderList) ? orderList[0] : undefined
+        const fetched = order ?  await privateClient.order.get(order.id) : false
+        expect(!gracely.Error.is(fetched) ? fetched : false).toEqual(order)
     })
     it("create card", async () => {
         const fetched = await publicClient.card.create({ pan: "4111111111111111", expires: [2, 22], csc: "987" })
