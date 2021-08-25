@@ -6,8 +6,8 @@ dotenv.config()
 
 describe("Client testing", () => {
 
-    let privateClientPromise = Client.open(process.env.host ?? "backup", process.env.private ?? "backup", "order", "merchant", "log")
-    let publicClientPromise = Client.open(process.env.host ?? "backup", process.env.public ?? "backup", "card")
+    let privateClientPromise = Client.open(process.env.host ?? "backup", process.env.privateKey ?? "backup", "order", "merchant", "log")
+    let publicClientPromise = Client.open(process.env.host ?? "backup", process.env.publicKey ?? "backup", "card")
 
     type PromiseType<T> = T extends PromiseLike<infer U> ? PromiseType<U> : T
 
@@ -22,7 +22,7 @@ describe("Client testing", () => {
     it("get order", async () => {
         const orderList = await privateClient.order.list()
         const order = !gracely.Error.is(orderList) && Array.isArray(orderList) ? orderList[0] : undefined
-        const fetched = order ?  await privateClient.order.get(order.id) : false
+        const fetched = order ? await privateClient.order.get(order.id) : false
         expect(!gracely.Error.is(fetched) ? fetched : false).toEqual(order)
     })
     it("create card", async () => {
