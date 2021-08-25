@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es2019",
+        "target": "es2017",
         "module": "es2020",
         "allowJs": true,
         "allowSyntheticDefaultImports": true,
@@ -17,10 +17,10 @@
         "resolveJsonModule": true,
         "lib": [
             "es2019",
-            "webworker"
+            "ES2015",
+            "dom",
         ],
         "types": [
-            "@cloudflare/workers-types",
             "node",
             "jest"
         ],
@@ -33,7 +33,6 @@
     "include": [
         "*.ts",
         "**/*.ts",
-        "./node_modules/@cloudflare/workers-types/index.d.ts"
     ],
     "exclude": [
         "*.spec.ts",
