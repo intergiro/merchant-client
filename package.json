@@ -56,16 +56,13 @@
     },
     "dependencies": {
         "@payfunc/model": "payfunc/model#create-psp-client-bumped",
-        "@payfunc/model-acquirer": "payfunc/model-acquirer#exteded-client",
-        "@payfunc/model-base": "payfunc/model-base#connection-optional-header",
+        "@payfunc/model-acquirer": "github:payfunc/model-acquirer#extend-client",
+        "@payfunc/model-base": "payfunc/model-base#connection-accept",
         "@payfunc/model-card": "payfunc/model-card#client-bumped",
-        "@payfunc/model-log": "payfunc/model-log#log-client-connection",
-        "authly": "^0.2.3",
+        "@payfunc/model-log": "payfunc/model-log#log-client-connection-bumped",
         "cloud-http": "0.0.24",
         "dotenv": "^8.2.0",
-        "gracely": "^0.1.7",
-        "isoly": "0.1.9",
-        "selectively": "0.0.60"
+        "gracely": "^0.1.7"
     },
     "devDependencies": {
         "@babel/core": "^7.11.0",
