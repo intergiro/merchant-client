@@ -20,6 +20,9 @@ export async function open<T extends keyof Client>(subset: T, connection: Connec
 		case "card":
 			result = new (await import("@payfunc/model-card/dist/Client/Card")).Card(connection)
 			break;
+		case "contact":
+			result = new (await import("@payfunc/model/Client/Contact")).Contact(connection)
+			break;
 		case "customer":
 			result = new (await import("@payfunc/model/Client/Customer")).Customer(connection)
 			break;

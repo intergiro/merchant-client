@@ -7,6 +7,7 @@ import type { Card } from "@payfunc/model-card/dist/Client/Card"
 import type { Log } from "@payfunc/model-log/Client/Log"
 import type { Order } from "@payfunc/model/Client/Order"
 import type { Me } from "@payfunc/model/Client/Me"
+import type { Contact } from "@payfunc/model/Client/Contact"
 import type { Customer } from "@payfunc/model/Client/Customer"
 import { Connection } from "@payfunc/model-base"
 import { open as openSubset } from "./open"
@@ -19,6 +20,7 @@ export interface Client {
 	settlement: Settlement
 	card: Card
 	order: Order
+	contact: Contact
 	customer: Customer
 	log: Log
 	me: Me
@@ -30,7 +32,7 @@ export namespace Client {
 		export const acquirer = ["authorization", "merchant", "verification", "settlement"] as const
 		export const card = ["card"] as const
 		export const log = ["log"] as const
-		export const psp = ["order", "customer"] as const
+		export const psp = ["order", "customer", "me", "contact"] as const
 		export const values = [...acquirer, ...card, ...log, ...psp] as const
 		export function is(value: any | Subset): value is Subset {
 			return typeof value == "string" && (values as unknown as string[]).includes(value)
