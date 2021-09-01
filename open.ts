@@ -1,5 +1,6 @@
 import type { Client } from "./index";
 import { Connection } from "@payfunc/model-base";
+import "isomorphic-fetch"
 
 export async function open<T extends keyof Client>(subset: T, connection: Connection, url?: string): Promise<Client[T]> {
 	let result: any;
@@ -27,6 +28,9 @@ export async function open<T extends keyof Client>(subset: T, connection: Connec
 			break;
 		case "log":
 			result = new (await import("@payfunc/model-log/Client/Log")).Log(connection)
+			break;
+		case "me":
+			result = new (await import("@payfunc/model/Client/Me")).Me(connection)
 			break;
 	}
 	return result;
