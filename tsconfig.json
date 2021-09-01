@@ -11,12 +11,11 @@
 				"types/*"
 			]
 		},
-		"allowSyntheticDefaultImports": true,
 		"types": [
 			"node"
 		]
 	},
 	"files": [
-		"index.ts",
+		"index.ts", "./open.ts",
 	]
 }

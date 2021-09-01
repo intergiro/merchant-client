@@ -17,7 +17,6 @@
         "resolveJsonModule": true,
         "lib": [
             "es2019",
-            "ES2015",
             "dom",
         ],
         "types": [
