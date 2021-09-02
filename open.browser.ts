@@ -1,6 +1,5 @@
 import type { Client } from "./index";
 import { Connection } from "@payfunc/model-base";
-import "isomorphic-fetch"
 
 export async function open<T extends keyof Client>(subset: T, connection: Connection, url?: string): Promise<Client[T]> {
 	let result: any;

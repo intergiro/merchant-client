@@ -75,6 +75,7 @@
         "eslint-config-standardize": "^0.7.1",
         "eslint-plugin-prettierx": "github:nilssonemma/eslint-plugin-prettierx#master",
         "eslint-plugin-simple-import-sort": "^7.0.0",
+        "isomorphic-fetch": "^3.0.0",
         "jest": "^26",
         "prettierx": "github:simonmika/prettierx#newline-before-clause",
         "ts-jest": "^26.1.0",

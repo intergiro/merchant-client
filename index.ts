@@ -11,7 +11,6 @@ import type { Contact } from "@payfunc/model/Client/Contact"
 import type { Customer } from "@payfunc/model/Client/Customer"
 import { Connection } from "@payfunc/model-base"
 import { open as openSubset } from "./open"
-import "isomorphic-fetch"
 
 export interface Client {
 	authorization: Authorization

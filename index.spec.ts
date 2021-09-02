@@ -2,7 +2,6 @@ import * as model from "./index"
 import * as dotenv from "dotenv"
 import * as gracely from "gracely"
 import "isomorphic-fetch"
-import "node-fetch"
 
 dotenv.config()
 
