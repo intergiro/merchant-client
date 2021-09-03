@@ -56,10 +56,10 @@
     },
     "dependencies": {
         "@payfunc/model": "payfunc/model#me-client",
-        "@payfunc/model-acquirer": "payfunc/model-acquirer#model-base-bump",
+        "@payfunc/model-acquirer": "payfunc/model-acquirer#model-bump",
         "@payfunc/model-base": "0.1.14",
         "@payfunc/model-card": "0.2.18",
-        "@payfunc/model-log": "payfunc/model-log#connection",
+        "@payfunc/model-log": "0.1.6",
         "gracely": "^0.1.7"
     },
     "devDependencies": {

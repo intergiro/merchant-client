@@ -5,34 +5,34 @@ export async function open<T extends keyof Client>(subset: T, connection: Connec
 	let result: any;
 	switch (subset) {
 		case "authorization":
-			result = new (await import("@payfunc/model-acquirer/Client/Authorization")).Authorization(connection)
+			result = new (await import("@payfunc/model-acquirer/dist/Client/Authorization.js")).Authorization(connection)
 			break;
 		case "verification":
-			result = new (await import("@payfunc/model-acquirer/Client/Verification")).Verification(connection)
+			result = new (await import("@payfunc/model-acquirer/dist/Client/Verification.js")).Verification(connection)
 			break;
 		case "settlement":
-			result = new (await import("@payfunc/model-acquirer/Client/Settlement")).Settlement(connection)
+			result = new (await import("@payfunc/model-acquirer/dist/Client/Settlement.js")).Settlement(connection)
 			break;
 		case "merchant":
-			result = new (await import("@payfunc/model-acquirer/Client/Merchant")).Merchant(connection)
+			result = new (await import("@payfunc/model-acquirer/dist/Client/Merchant.js")).Merchant(connection)
 			break;
 		case "card":
-			result = new (await import("@payfunc/model-card/dist/Client/Card")).Card(connection)
+			result = new (await import("@payfunc/model-card/dist/Client/Card.js")).Card(connection)
 			break;
 		case "contact":
-			result = new (await import("@payfunc/model/Client/Contact")).Contact(connection)
+			result = new (await import("@payfunc/model/dist/Client/Contact.js")).Contact(connection)
 			break;
 		case "customer":
-			result = new (await import("@payfunc/model/Client/Customer")).Customer(connection)
+			result = new (await import("@payfunc/model/dist/Client/Customer.js")).Customer(connection)
 			break;
 		case "order":
-			result = new (await import("@payfunc/model/Client/Order")).Order(connection)
+			result = new (await import("@payfunc/model/dist/Client/Order.js")).Order(connection)
 			break;
 		case "log":
-			result = new (await import("@payfunc/model-log/Client/Log")).Log(connection)
+			result = new (await import("@payfunc/model-log/dist/Client/Log.js")).Log(connection)
 			break;
 		case "me":
-			result = new (await import("@payfunc/model/Client/Me")).Me(connection)
+			result = new (await import("@payfunc/model/dist/Client/Me.js")).Me(connection)
 			break;
 	}
 	return result;
