@@ -1,0 +1,26 @@
+name: "Release"
+
+on:
+  push:
+    branches:
+      - "master"
+jobs:
+  bump-version:
+    name: "Release from master"
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'patch version bump ')"
+
+    steps:
+      - name: "Checkout source code"
+        uses: "actions/checkout@v2"
+        with:
+          token: ${{ secrets.ADMIN_TOKEN }}
+
+      - name: "Version Bump"
+        id: version-bump
+        uses: "phips28/gh-action-bump-version@master"
+        with:
+          tag-prefix: ''
+          commit-message: 'patch version bump {{version}} [ci skip]'
+        env:
+          GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
