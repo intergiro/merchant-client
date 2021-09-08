@@ -1,4 +1,7 @@
-node_modules
 dist
+node_modules
+transpiled
+worker
+variables.toml
 .env
-.npmrc
+*.csv
