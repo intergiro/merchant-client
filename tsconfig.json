@@ -1,0 +1,21 @@
+{
+	"extends": "./tsconfig.test.json",
+	"compilerOptions": {
+		"declaration": true,
+		"sourceMap": true,
+		"sourceRoot": "../",
+		"outDir": "dist",
+		"baseUrl": ".",
+		"paths": {
+			"*": [
+				"types/*"
+			]
+		},
+		"types": [
+			"node"
+		]
+	},
+	"files": [
+		"index.ts", "./open.ts",
+	]
+}

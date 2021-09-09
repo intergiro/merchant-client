@@ -1,0 +1,48 @@
+{
+    "compilerOptions": {
+        "target": "es2019",
+        "module": "esnext",
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "sourceMap": true,
+        "outDir": "dist",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "lib": [
+            "es2019",
+            "dom",
+        ],
+        "types": [
+            "node",
+            "jest"
+        ],
+        "paths": {
+            "*": [
+                "types/*"
+            ]
+        }
+    },
+    "include": [
+        "*.ts",
+        "**/*.ts",
+    ],
+    "exclude": [
+        "*.spec.ts",
+        "**/*.spec.ts",
+        "node_modules/",
+        "dist/"
+    ],
+    "files": [
+        "index.ts"
+    ],
+    "typeAcquisition": {
+        "enable": true
+    }
+}
