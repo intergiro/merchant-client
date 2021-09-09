@@ -5,7 +5,7 @@ import "isomorphic-fetch"
 
 dotenv.config()
 
-describe("Client testing", () => {
+describe.skip("Client testing", () => {
 
     let privateClient: Pick<model.Client, "order" | "merchant" | "log">
     let publicClient: Pick<model.Client, "card" | "authorization">
