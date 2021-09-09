@@ -24,10 +24,10 @@ describe("Client testing", () => {
         const fetched = await publicClient.card.create({ pan: "4111111111111111", expires: [2, 22], csc: "987" })
         expect(typeof fetched == "string" && fetched.split(".").length == 3).toBeTruthy()
     })
-    it("get merchant", async () => {
+    it.skip("get merchant", async () => {
         expect(!gracely.Error.is(await privateClient.merchant.list())).toBeTruthy()
     })
-    it("get log", async () => {
+    it.skip("get log", async () => {
         const log = await privateClient.log.list()
         expect(!gracely.Error.is(log) && Array.isArray(log) && log.length > 0).toBeTruthy()
     })
