@@ -57,8 +57,8 @@
     "dependencies": {
         "@payfunc/model": "payfunc/model#me-client",
         "@payfunc/model-acquirer": "payfunc/model-acquirer#authorization-client-states",
-        "@payfunc/model-base": "0.1.17",
-        "@payfunc/model-card": "payfunc/model-card#base-bump",
+        "@payfunc/model-base": "0.1.18",
+        "@payfunc/model-card": "payfunc/model-card#authly-lock",
         "@payfunc/model-log": "0.1.6",
         "gracely": "^0.1.7"
     },
