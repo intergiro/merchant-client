@@ -6,16 +6,13 @@ on:
       - "master"
 jobs:
   bump-version:
-    name: "Release from master"
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'patch version bump ')"
-
     steps:
-      - name: "Checkout source code"
-        uses: "actions/checkout@v2"
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          token: ${{ secrets.ADMIN_TOKEN }}
-
+          node-version: '12.x'
       - name: "Version Bump"
         id: version-bump
         uses: "phips28/gh-action-bump-version@master"
