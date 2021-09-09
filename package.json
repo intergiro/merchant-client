@@ -1,6 +1,6 @@
 {
     "name": "@payfunc/merchant-client",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Client for psp and acquirer",
     "author": "PayFunc",
     "license": "MIT",
