@@ -55,10 +55,10 @@
         "clean": "rm -rf dist node_modules coverage"
     },
     "dependencies": {
-        "@payfunc/model": "0.3.21",
-        "@payfunc/model-acquirer": "0.1.66",
-        "@payfunc/model-base": "0.1.18",
-        "@payfunc/model-card": "0.2.21",
+        "@payfunc/model": "intergiro/model#model-base-bump-for-clients",
+        "@payfunc/model-acquirer": "intergiro/model-acquirer#authorization-list-by-merchants",
+        "@payfunc/model-base": "0.1.22",
+        "@payfunc/model-card": "0.2.24",
         "@payfunc/model-log": "0.1.6",
         "gracely": "0.1.7"
     },
