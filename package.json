@@ -59,7 +59,7 @@
         "@payfunc/model-acquirer": "0.1.76",
         "@payfunc/model-base": "0.1.22",
         "@payfunc/model-card": "0.2.24",
-        "@payfunc/model-log": "0.1.9",
+        "@payfunc/model-log": "0.1.10",
         "gracely": "0.1.7"
     },
     "devDependencies": {
