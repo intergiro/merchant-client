@@ -5,3 +5,4 @@ worker
 variables.toml
 .env
 *.csv
+node_modules
