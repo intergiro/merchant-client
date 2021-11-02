@@ -8,8 +8,10 @@
   "bugs": {
     "url": "https://github.com/payfunc/merchant-client/issues"
   },
-  "transform": {
-    "^.+\\.(j|t)sx?$": "ts-jest"
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "git": {
+    "tagName": "v${version}"
   },
   "github": {
     "release": true
