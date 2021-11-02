@@ -3,6 +3,7 @@ import type { Authorization } from "@payfunc/model-acquirer/Client/Authorization
 import type { Verification } from "@payfunc/model-acquirer/Client/Verification"
 import type { Merchant } from "@payfunc/model-acquirer/Client/Merchant"
 import type { Settlement } from "@payfunc/model-acquirer/Client/Settlement"
+import type { Functions } from "@payfunc/model-acquirer/Client/Functions"
 import type { Card } from "@payfunc/model-card/dist/Client/Card"
 import type { Log } from "@payfunc/model-log/Client/Log"
 import type { Order } from "@payfunc/model/Client/Order"
@@ -17,6 +18,7 @@ export interface Client {
 	verification: Verification
 	merchant: Merchant
 	settlement: Settlement
+	functions: Functions
 	card: Card
 	order: Order
 	contact: Contact
@@ -28,7 +30,7 @@ export namespace Client {
 
 	export type Subset = keyof Client
 	export namespace Subset {
-		export const acquirer = ["authorization", "merchant", "verification", "settlement"] as const
+		export const acquirer = ["authorization", "merchant", "verification", "settlement", "functions"] as const
 		export const card = ["card"] as const
 		export const log = ["log"] as const
 		export const psp = ["order", "customer", "me", "contact"] as const
