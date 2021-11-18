@@ -7,6 +7,9 @@ export async function open<T extends keyof Client>(subset: T, connection: Connec
 		case "authorization":
 			result = new (await import("@payfunc/model-acquirer/dist/Client/Authorization.js")).Authorization(connection)
 			break;
+		case "acquirerLog":
+			result = new (await import("@payfunc/model-log/dist/Client/Log.js")).Log(connection)
+			break;
 		case "verification":
 			result = new (await import("@payfunc/model-acquirer/dist/Client/Verification.js")).Verification(connection)
 			break;
@@ -31,8 +34,8 @@ export async function open<T extends keyof Client>(subset: T, connection: Connec
 		case "order":
 			result = new (await import("@payfunc/model/dist/Client/Order.js")).Order(connection)
 			break;
-		case "log":
-			result = new (await import("@payfunc/model-log/dist/Client/Log.js")).Log(connection)
+		case "pspLog":
+			result = new (await import("@payfunc/model/dist/Client/Log.js")).Log(connection)
 			break;
 		case "me":
 			result = new (await import("@payfunc/model/dist/Client/Me.js")).Me(connection)

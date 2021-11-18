@@ -7,6 +7,9 @@ export async function open<T extends keyof Client>(subset: T, connection: Connec
 		case "authorization":
 			result = new (await import(`${url}acquirer/Client/Authorization`)).Authorization(connection)
 			break;
+		case "acquirerLog":
+			result = new (await import(`${url}log/Client`)).Client(connection)
+			break;
 		case "verification":
 			result = new (await import(`${url}acquirer/Client/Verification`)).Verification(connection)
 			break;
@@ -31,8 +34,8 @@ export async function open<T extends keyof Client>(subset: T, connection: Connec
 		case "order":
 			result = new (await import(`${url}Client/Order`)).Order(connection)
 			break;
-		case "log":
-			result = new (await import(`${url}log/Client`)).Client(connection)
+		case "pspLog":
+			result = new (await import(`${url}Client/Log`)).Log(connection)
 			break;
 		case "me":
 			result = new (await import(`${url}Client/Me`)).Me(connection)
