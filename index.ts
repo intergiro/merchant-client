@@ -5,7 +5,8 @@ import type { Merchant } from "@payfunc/model-acquirer/Client/Merchant"
 import type { Settlement } from "@payfunc/model-acquirer/Client/Settlement"
 import type { Functions } from "@payfunc/model-acquirer/Client/Functions"
 import type { Card } from "@payfunc/model-card/dist/Client/Card"
-import type { Log } from "@payfunc/model-log/Client/Log"
+import type { Log as aLog } from "@payfunc/model-log/Client/Log"
+import type { Log as pLog } from "@payfunc/model/Client/Log"
 import type { Order } from "@payfunc/model/Client/Order"
 import type { Me } from "@payfunc/model/Client/Me"
 import type { Contact } from "@payfunc/model/Client/Contact"
@@ -23,18 +24,19 @@ export interface Client {
 	order: Order
 	contact: Contact
 	customer: Customer
-	log: Log
+	log: aLog
+	pspLog: pLog
 	me: Me
 }
 export namespace Client {
-
 	export type Subset = keyof Client
 	export namespace Subset {
 		export const acquirer = ["authorization", "merchant", "verification", "settlement", "functions"] as const
 		export const card = ["card"] as const
-		export const log = ["log"] as const
+		export const acquirerLog = ["logAcquirer"] as const
+		export const pspLog = ["logPsp"] as const
 		export const psp = ["order", "customer", "me", "contact"] as const
-		export const values = [...acquirer, ...card, ...log, ...psp] as const
+		export const values = [...acquirer, ...card, ...acquirerLog, ...pspLog, ...psp] as const
 		export function is(value: any | Subset): value is Subset {
 			return typeof value == "string" && (values as unknown as string[]).includes(value)
 		}
