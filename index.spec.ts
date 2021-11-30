@@ -7,12 +7,13 @@ dotenv.config()
 
 describe.skip("Client testing", () => {
 
-    let privateClient: Pick<model.Client, "order" | "merchant" | "log">
+    let privateClient: Pick<model.Client, "order" | "merchant" | "pspLog">
     let publicClient: Pick<model.Client, "card" | "authorization">
 
     beforeAll(async () => {
-        privateClient = await model.Client.open(process.env.host ?? "backup", process.env.privateKey ?? "backup", "order", "merchant", "log")
-        publicClient = await model.Client.open(process.env.host ?? "backup", process.env.publicKey ?? "backup", "card", "authorization")
+      	privateClient = await model.Client.open(process.env.host ?? "backup", process.env.privateKey ?? "backup", "order", "merchant", "pspLog")
+				// TODO: Fix bug that only one client can exist: privateClient's key will be overwritten with publicClient's key.
+     		publicClient = await model.Client.open(process.env.host ?? "backup", process.env.publicKey ?? "backup", "card", "authorization")
     })
     it("get order", async () => {
         const orderList = await privateClient.order.list()
@@ -28,7 +29,7 @@ describe.skip("Client testing", () => {
         expect(!gracely.Error.is(await privateClient.merchant.list())).toBeTruthy()
     })
     it.skip("get log", async () => {
-        const log = await privateClient.log.list()
+        const log = await privateClient.pspLog.list()
         expect(!gracely.Error.is(log) && Array.isArray(log) && log.length > 0).toBeTruthy()
     })
 })
