@@ -7,7 +7,7 @@ export async function open<T extends keyof Client>(subset: T, connection: Connec
 		case "authorization":
 			result = new (await import(`${url}acquirer/Client/Authorization`)).Authorization(connection)
 			break;
-		case "acquirerLog":
+		case "log":
 			result = new (await import(`${url}log/Client`)).Client(connection)
 			break;
 		case "verification":
