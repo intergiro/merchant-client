@@ -54,11 +54,11 @@
     "clean": "rm -rf dist node_modules coverage"
   },
   "dependencies": {
-    "@payfunc/model": "0.3.33",
-    "@payfunc/model-acquirer": "0.1.93",
-    "@payfunc/model-base": "0.1.27",
-    "@payfunc/model-card": "0.2.28",
-    "@payfunc/model-log": "0.1.13",
+    "@payfunc/model": "payfunc/model#pagination",
+    "@payfunc/model-acquirer": "intergiro/model-acquirer#pagination",
+    "@payfunc/model-base": "intergiro/model-base#pagination",
+    "@payfunc/model-card": "payfunc/model-card#pagination",
+    "@payfunc/model-log": "payfunc/model-log#pagination",
     "gracely": "0.1.7"
   },
   "devDependencies": {
