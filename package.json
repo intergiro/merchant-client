@@ -55,9 +55,9 @@
   },
   "dependencies": {
     "@payfunc/model": "0.3.41",
-    "@payfunc/model-acquirer": "0.1.110",
+    "@payfunc/model-acquirer": "0.1.111",
     "@payfunc/model-base": "0.1.31",
-    "@payfunc/model-card": "0.2.34",
+    "@payfunc/model-card": "0.2.35",
     "@payfunc/model-log": "0.1.20",
     "gracely": "0.1.7"
   },
