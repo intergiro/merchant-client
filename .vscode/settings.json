@@ -1,0 +1,20 @@
+{
+	"files.exclude": {
+		".*": true,
+		"*.json": true,
+		"dist": true,
+		"node_modules": true,
+		"README.md": true,
+		"LICENSE": true
+	},
+	"editor.tabSize": 2,
+	"editor.detectIndentation": true,
+	"editor.insertSpaces": false,
+	"files.insertFinalNewline": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+		"eslint.autoFixOnSave": true,
+	},
+	"javascript.format.enable": false,
+	"typescript.format.enable": false,
+}
