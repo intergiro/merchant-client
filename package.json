@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "@payfunc/model": "0.3.42",
-    "@payfunc/model-acquirer": "github:intergiro/model-acquirer#remove-unused-import",
+    "@payfunc/model-acquirer": "0.1.113",
     "@payfunc/model-base": "0.1.32",
     "@payfunc/model-card": "0.2.36",
     "@payfunc/model-log": "0.1.21",
