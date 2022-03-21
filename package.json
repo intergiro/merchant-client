@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "@payfunc/model": "0.3.42",
-    "@payfunc/model-acquirer": "intergiro/model-acquirer#add-account-local",
+    "@payfunc/model-acquirer": "0.1.117",
     "@payfunc/model-base": "0.1.32",
     "@payfunc/model-card": "0.2.36",
     "@payfunc/model-log": "0.1.21",
