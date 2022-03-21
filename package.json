@@ -54,11 +54,11 @@
     "clean": "rm -rf dist node_modules coverage"
   },
   "dependencies": {
-    "@payfunc/model": "0.3.42",
-    "@payfunc/model-acquirer": "0.1.113",
-    "@payfunc/model-base": "0.1.32",
-    "@payfunc/model-card": "0.2.36",
-    "@payfunc/model-log": "0.1.21",
+    "@payfunc/model": "0.3.44",
+    "@payfunc/model-acquirer": "0.1.119",
+    "@payfunc/model-base": "0.1.33",
+    "@payfunc/model-card": "0.2.38",
+    "@payfunc/model-log": "0.1.22",
     "gracely": "0.1.7"
   },
   "devDependencies": {
