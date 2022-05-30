@@ -10,9 +10,6 @@ export async function open<T extends keyof Client>(subset: T, connection: Connec
 		case "log":
 			result = new (await import("@payfunc/model-log/dist/Client/Log.js")).Log(connection)
 			break;
-		case "verification":
-			result = new (await import("@payfunc/model-acquirer/dist/Client/Verification.js")).Verification(connection)
-			break;
 		case "settlement":
 			result = new (await import("@payfunc/model-acquirer/dist/Client/Settlement.js")).Settlement(connection)
 			break;

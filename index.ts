@@ -1,6 +1,5 @@
 
 import type { Authorization } from "@payfunc/model-acquirer/Client/Authorization"
-import type { Verification } from "@payfunc/model-acquirer/Client/Verification"
 import type { Merchant } from "@payfunc/model-acquirer/Client/Merchant"
 import type { Settlement } from "@payfunc/model-acquirer/Client/Settlement"
 import type { Functions } from "@payfunc/model-acquirer/Client/Functions"
@@ -16,7 +15,6 @@ import { open as openSubset } from "./open"
 
 export interface Client {
 	authorization: Authorization
-	verification: Verification
 	merchant: Merchant
 	settlement: Settlement
 	functions: Functions
