@@ -29,7 +29,7 @@ export interface Client {
 export namespace Client {
 	export type Subset = keyof Client
 	export namespace Subset {
-		export const acquirer = ["authorization", "merchant", "verification", "settlement", "functions"] as const
+		export const acquirer = ["authorization", "merchant", "settlement", "functions"] as const
 		export const card = ["card"] as const
 		export const acquirerLog = ["logAcquirer"] as const
 		export const pspLog = ["logPsp"] as const
