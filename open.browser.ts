@@ -10,9 +10,6 @@ export async function open<T extends keyof Client>(subset: T, connection: Connec
 		case "log":
 			result = new (await import(`${url}log/Client`)).Client(connection)
 			break;
-		case "verification":
-			result = new (await import(`${url}acquirer/Client/Verification`)).Verification(connection)
-			break;
 		case "settlement":
 			result = new (await import(`${url}acquirer/Client/Settlement`)).Settlement(connection)
 			break;
