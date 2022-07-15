@@ -19,6 +19,9 @@ export async function open<T extends keyof Client>(subset: T, connection: Connec
 		case "functions":
 			result = new (await import("@payfunc/model-acquirer/dist/Client/Functions.js")).Functions(connection)
 			break;
+      case "dispute":
+        result = new (await import("@payfunc/model-acquirer/dist/Client/Dispute.js")).Dispute(connection);
+        break;
 		case "card":
 			result = new (await import("@payfunc/model-card/dist/Client/Card.js")).Card(connection)
 			break;

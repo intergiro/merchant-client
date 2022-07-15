@@ -19,6 +19,9 @@ export async function open<T extends keyof Client>(subset: T, connection: Connec
 		case "functions":
 			result = new (await import(`${url}acquirer/Client/Functions`)).Functions(connection)
 			break;
+    case "dispute":
+      result = new (await import(`${url}acquirer/Client/dispute`)).Dispute(connection);
+      break;
 		case "card":
 			result = new (await import(`${url}card/dist/Client`)).Client(connection)
 			break;
