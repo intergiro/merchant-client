@@ -3,18 +3,24 @@
 		".*": true,
 		"*.json": true,
 		"dist": true,
-		"node_modules": true,
 		"README.md": true,
-		"LICENSE": true
+		"LICENSE": true,
+		"tsconfig.*": true,
+		"node_modules": true,
+		"*.code-workspace": true
 	},
-	"editor.tabSize": 2,
-	"editor.detectIndentation": true,
-	"editor.insertSpaces": false,
 	"files.insertFinalNewline": true,
+	"editor.tabSize": 2,
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": true,
 		"eslint.autoFixOnSave": true,
 	},
+	"eslint.format.enable": true,
+	"eslint.lintTask.enable": true,
 	"javascript.format.enable": false,
-	"typescript.format.enable": false,
+	"typescript.format.enable": false
 }

@@ -1,16 +1,15 @@
-
-import type { Authorization } from "@payfunc/model-acquirer/Client/Authorization"
-import type { Merchant } from "@payfunc/model-acquirer/Client/Merchant"
-import type { Settlement } from "@payfunc/model-acquirer/Client/Settlement"
-import type { Functions } from "@payfunc/model-acquirer/Client/Functions"
 import type { Card } from "@payfunc/model-card/dist/Client/Card"
-import type { Log as aLog } from "@payfunc/model-log/Client/Log"
-import type { Log as pLog } from "@payfunc/model/Client/Log"
-import type { Order } from "@payfunc/model/Client/Order"
-import type { Me } from "@payfunc/model/Client/Me"
 import type { Contact } from "@payfunc/model/Client/Contact"
 import type { Customer } from "@payfunc/model/Client/Customer"
+import type { Log as pLog } from "@payfunc/model/Client/Log"
+import type { Me } from "@payfunc/model/Client/Me"
+import type { Order } from "@payfunc/model/Client/Order"
+import type { Authorization } from "@payfunc/model-acquirer/Client/Authorization"
+import type { Functions } from "@payfunc/model-acquirer/Client/Functions"
+import type { Merchant } from "@payfunc/model-acquirer/Client/Merchant"
+import type { Settlement } from "@payfunc/model-acquirer/Client/Settlement"
 import { Connection } from "@payfunc/model-base"
+import type { Log as aLog } from "@payfunc/model-log/Client/Log"
 import { open as openSubset } from "./open"
 
 export interface Client {
@@ -42,6 +41,8 @@ export namespace Client {
 	}
 	export async function open<T extends Subset>(url: string, key: string, ...subset: T[]): Promise<Pick<Client, T>> {
 		const connection: Connection = Connection.open(url, key)
-		return Object.fromEntries(await Promise.all(subset.map(async m => [m, await Subset.open(m, connection, url)] as const))) as Pick<Client, T>
+		return Object.fromEntries(
+			await Promise.all(subset.map(async m => [m, await Subset.open(m, connection, url)] as const))
+		) as Pick<Client, T>
 	}
 }
